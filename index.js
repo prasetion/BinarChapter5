@@ -5,6 +5,8 @@ const port = 3000
 // set engine
 app.set('view engine', 'ejs');
 
+app.use("/public", express.static(__dirname + "/public"));
+
 app.use(function(req, res, next) {
     console.log('Time:', Date.now())
     next()
@@ -14,7 +16,7 @@ app.use(function(req, res, next) {
 app.get("/", (request, response) => response.render("index"))
 
 // game
-app.get("/game", (request, response) => response.send("game page"))
+app.get("/game", (request, response) => response.render("game"))
 
 // ini error
 app.get("/error", (req, res) => {

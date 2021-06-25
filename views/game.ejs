@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.min.css" />
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" href="../public/css/game.css" />
+
+    <!-- file js -->
+    <title>Challenge Chapter 4 - Batu Gunting Kertas</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <div class="row bg-grey">
+            <div class="col">
+                <a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg></a>
+            </div>
+            <div class="col">
+                <div class="default-text title">
+                    Rock Paper Scissors
+                </div>
+            </div>
+        </div> -->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-config">
+            <a class="navbar-brand back" href="/">
+                &lt; </svg> <img src="../public/assets/logo 1.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="default-text title ml-4">
+                            Rock Paper Scissors
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="row mt-3 align-self-center text-center">
+            <div class="col-sm default-text">PLAYER 1</div>
+            <div class="col-sm"></div>
+            <div class="col-sm default-text">COM</div>
+        </div>
+        <div class="row mt-3 align-self-center text-center">
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary btn-player" id="rockButton">
+                    <img src="../public/assets/batu 1.png" alt="">
+                 </button>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary buttonCom" id="rockCom">
+                    <img src="../public/assets/batu 1.png" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="row mt-3 align-self-center text-center">
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary btn-player" id="paperButton">
+                    <img src="../public/assets/kertas 1.png" alt="">
+                 </button>
+            </div>
+            <div class="col-sm">
+                <div id="versus">VS</div>
+                <div id="pop-up-win">
+                    <div class="mt-5" id="textResult"></div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary buttonCom" id="paperCom">
+                    <img src="../public/assets/kertas 1.png" alt="">
+                </button>
+            </div>
+        </div>
+        <div class="row mt-3 align-self-center text-center">
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary btn-player" id="scissorButton">
+                    <img src="../public/assets/gunting 1.png" alt="">
+          </button>
+            </div>
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary buttonCom" id="scissorCom">
+                    <img src="../public/assets/gunting 1.png" alt="">
+          </button>
+            </div>
+        </div>
+        <div class="row mt-3 align-self-center text-center">
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-click-deactivate" id="resetButton">
+                    <img src="../public/assets/refresh 2.png" alt="">
+          </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- my script -->
+    <script type="text/javascript" src="../public/js/game.js"></script>
+</body>
+
+</html>
