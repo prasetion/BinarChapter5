@@ -1,22 +1,33 @@
 const express = require("express")
 const app = express()
 const port = 3000
+const user = require("./api/user")
 
-// set engine
+// set view engine
 app.set('view engine', 'ejs');
 
 app.use("/public", express.static(__dirname + "/public"));
+
+app.use(express.json())
 
 app.use(function(req, res, next) {
     console.log('Time:', Date.now())
     next()
 })
 
+app.use("/api/v1/users", user)
+
 // home
 app.get("/", (request, response) => response.render("index"))
 
 // game
 app.get("/game", (request, response) => response.render("game"))
+
+// login
+app.get("/login", (request, response) => response.render("login"))
+
+// register
+app.get("/register", (request, response) => response.render("register"))
 
 // ini error
 app.get("/error", (req, res) => {
