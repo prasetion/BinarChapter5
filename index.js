@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express()
 const port = 3000
+
 const user = require("./api/user")
+    // const addUser = require("./api/add_user")
 
 // set view engine
 app.set('view engine', 'ejs');
@@ -15,7 +17,8 @@ app.use(function(req, res, next) {
     next()
 })
 
-app.use("/api/v1/users", user)
+// api
+app.use("/api/v1", user)
 
 // home
 app.get("/", (request, response) => response.render("index"))

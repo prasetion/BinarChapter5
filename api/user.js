@@ -1,43 +1,76 @@
-// const express = require("express")
-// const myData = require('./user.json')
+const express = require('express')
+const router = express.Router()
+var users = require('./user.json')
+const app = express();
 
-// const routes = express.Router()
+app.use(express.json());
 
-// const getData = routes.get("/api/v1/users", (req, res) => {
-//     console.log("get all data user");
-//     res.status(200).json(myData);
-// })
+// define api route
+router.get('/', function(req, res) {
+    res.json({
+        message: "kurang lengkap pathnya"
+    })
+})
 
-// const postData = routes.post("/api/v1/posts", (req, res) => {
-//     console.log("post data user");
-// })
+// get all users
+router.get('/users', function(req, res) {
+    console.log("get all data user");
+    res.status(200).json(users);
+})
 
+// get user by id
+router.get('/users/:id', (req, res) => {
+    const user = users.find(i => i.id == +req.params.id)
+    res.status(200).json(user);
+})
 
-// routes.post("/", (req, res) => {
+// add user
+router.post('/add', (req, res) => {
 
-// })
+    const { username, password, fullname } = req.body
+    const id = users[users.length - 1].id + 1;
 
+    // new temp user
+    const user = {
+        id,
+        username,
+        password,
+        fullname
+    }
 
+    // add to users
+    users.push(user)
+    res.status(201).json(user);
 
-// module.exports = routes;
+    console.log("add user data");
+})
 
-// const myRouter = express.Router();
+// changing data user
+router.put("/users/:id", (req, res) => {
+    let user = users.find(i => i.id == +req.params.id)
 
-// module.exports = function(app) {
+    // sebenrnya kurang faham dibagian sini mas
+    const params = {
+        username: req.body.username,
+        password: req.body.password,
+        fullname: req.body.fullname
+    }
 
-//     app.get('/api/v1/users', function(req, res) {
-//         console.log("get all data user");
-//     });
+    user = {...user, ...params }
 
-//     //other routes..
-// }
+    // update data user
+    users = users.map(i => i.id == user.id ? user : i)
+    res.status(200).json(users)
+    console.log("change user data");
+})
 
-module.exports = function(app) {
-    app.get('/index', function(req, res) {
-        res.render('index', { title: 'index' });
-    });
+// delete user
+router.delete("/users/:id", (req, res) => {
+    users = users.filter(i => i.id != +req.params.id)
+    res.status(200).json({
+        message: `success delete user`
+    })
+    console.log("delete user data");
+})
 
-    app.get('/contactus', function(req, res) {
-        res.render('contactus', { title: 'contactus' });
-    });
-}
+module.exports = router
