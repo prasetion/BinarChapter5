@@ -3,7 +3,8 @@ const router = express.Router()
 var users = require('./user.json')
 const app = express();
 
-app.use(express.json());
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 // define api route
 router.get('/', function(req, res) {
@@ -26,7 +27,7 @@ router.get('/users/:id', (req, res) => {
 
 // add user
 router.post('/add', (req, res) => {
-
+    console.log(req.body);
     const { username, password, fullname } = req.body
     const id = users[users.length - 1].id + 1;
 
@@ -49,7 +50,7 @@ router.post('/add', (req, res) => {
 router.put("/users/:id", (req, res) => {
     let user = users.find(i => i.id == +req.params.id)
 
-    // sebenrnya kurang faham dibagian sini mas
+    // sebenrnya masih kurang faham dibagian sini mas
     const params = {
         username: req.body.username,
         password: req.body.password,
