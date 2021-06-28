@@ -1,0 +1,28 @@
+{
+    "name": "binarchapter5",
+    "version": "1.0.0",
+    "description": "challenge chapter 5",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js",
+        "app": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prasetion/BinarChapter5.git"
+    },
+    "author": "prasetion",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/prasetion/BinarChapter5/issues"
+    },
+    "homepage": "https://github.com/prasetion/BinarChapter5#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}
