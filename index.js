@@ -38,16 +38,14 @@ app.post('/login', (req, res) => {
         return i.username == username && i.password == password
     });
 
-    console.log(user);
-
     if (user) {
         console.log("success login");
         res.redirect('/');
         return;
     } else {
         console.log("fail login");
-        res.render('login', {
-            message: 'Invalid username or password',
+        res.render("login", {
+            message: "Ada yang invalid bro",
         });
     }
 });
