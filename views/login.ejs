@@ -27,19 +27,19 @@
         <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
 
         <!-- masih belum faham kalau munculin alert, misal salah password -->
-        <!-- <% if (locals.message) { %>
+        <% if (message != '') { %>
             <div class="alert alert-danger" role="alert">
                 <%= message %>
             </div>
-            <% }%> -->
+            <% }%>
 
 
-        <label for="inputUsername" class="sr-only">username</label>
-        <input type="username" id="inputUsername" class="form-control" placeholder="username" required="" autofocus="" name="username">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="password" required="" name="password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-        <a class="btn btn-lg btn-danger btn-block" href="/"> Back</a>
+                <label for="inputUsername" class="sr-only">username</label>
+                <input type="username" id="inputUsername" class="form-control" placeholder="username" required="" autofocus="" name="username">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="password" required="" name="password">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                <a class="btn btn-lg btn-danger btn-block" href="/"> Back</a>
     </form>
 </body>
 

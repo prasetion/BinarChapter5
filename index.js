@@ -28,7 +28,9 @@ app.get("/", (request, response) => response.render("index"))
 app.get("/game", (request, response) => response.render("game"))
 
 // login
-app.get("/login", (request, response) => response.render("login"))
+app.get("/login", (request, response) => response.render("login", {
+    message: '',
+}))
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
